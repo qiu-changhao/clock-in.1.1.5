@@ -1,0 +1,6 @@
+/* pages/punish.wxss */
+.text_center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

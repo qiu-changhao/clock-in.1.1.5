@@ -1,0 +1,26 @@
+<block wx:if="{{clock_logs.length>0}}">
+  <view wx:for="{{clock_logs}}" wx:key="index" wx:for-item="item" bindtap="showDetail" data-cid="{{item.cid}}">
+    <view class="container">
+      <view class="playList flex">
+        <view class="flex flex-column space-between" style="flex:1">
+          <view class="nickName flex space-between">
+            <text class="title">{{item.title}}</text>
+          </view>
+          <view class="nickName flex space-between">
+            <text>{{item.className}}</text>
+            <text>应到人数：{{item.studentCount}}</text>
+            <text>实际签到人数：{{item.clockInCount}}</text>
+          </view>
+          <view class="time flex space-between">
+            <text class="gray">{{item.startTime}} 至 {{item.endTime}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</block>
+<view wx:else>
+  <view class="text_center">
+    <text style="color:gray;font-weight:600;font-size: 40rpx;">还没有人来打卡哦！</text>
+  </view>
+</view>

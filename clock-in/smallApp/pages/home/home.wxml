@@ -1,0 +1,48 @@
+<view class="container me_clock">
+  <view class="title p20">我的打卡</view>
+  <view class="me_clock_content flex space-between">
+    <view class="flex flex-column align-middle p20 p-v-40" bindtap="gotoJoin" wx:if="{{type==0}}">
+      <image class="" src="/assets/clock.png" />
+      <text class="">打卡</text>
+    </view>
+    <view class="flex flex-column align-middle p20 p-v-40" bindtap="gotoList" wx:if="{{type==1}}"  style="width: calc(100vw / 2);">
+      <image class="" src="/assets/clock_list.png" />
+      <text class="">创建的打卡</text>
+    </view>
+    <view class="flex flex-column align-middle p20 p-v-40" bindtap="gotoCreate" wx:if="{{type==1}}"  style="width: calc(100vw / 2);">
+      <image class="" src="/assets/create_clock.png" />
+      <text class="">创建打卡</text>
+    </view>
+  </view>
+</view>
+
+<view class="container me_clock">
+  <view class="title p20">管理</view>
+  <view class="me_clock_content flex space-between">
+    <view class="flex flex-column align-middle p20 p-v-40" bindtap="gotoTeam" wx:if="{{type == 1}}">
+      <image class="" src="/assets/dangqian.png" />
+      <text class="">管理班级</text>
+    </view>
+    <view class="flex flex-column align-middle p20 p-v-40" bindtap="gotoPlayclockList" wx:if="{{type == 1}}">
+      <image class="" src="/assets/remind.png" />
+      <text class="">管理打卡</text>
+    </view>
+    <view class="flex flex-column align-middle p20 p-v-40" bindtap="gotoEnroll" wx:if="{{type == 0}}">
+      <image class="" src="/assets/enroll.png" />
+      <text class="">报名</text>
+    </view>
+    <view class="flex flex-column align-middle p20 p-v-40" bindtap="logout">
+      <image class="" src="/assets/logout.webp" />
+      <text class="">退出</text>
+    </view>
+  </view>
+</view>
+
+<view class="footer" style="margin-bottom:60rpx">
+  <view style="text-align: center;margin-top: 20rpx;"><text style="color:red;font-weight:bold">{{gonggao}}</text></view>
+  <view>
+    <text>V1.0.0</text>
+    <text bindtap="direction">使用说明</text>
+  </view>
+  <view>©2023课程打卡小程序</view>
+</view>

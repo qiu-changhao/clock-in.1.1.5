@@ -1,0 +1,22 @@
+<view>
+    <view class="login">
+        <view class="login-background">
+            <view>
+                <radio-group bindchange="setType">
+                    <radio value="0" checked="true"/>学生
+                    <radio value="1"/>老师
+                </radio-group>
+            </view>
+            <view>
+                <input bindinput="setUsername" type="text" placeholder="用户名"/>
+            </view>
+            <view>
+                <input bindblur="setPassword" type="text" placeholder="密码" password/>
+            </view>
+            <view>
+                <button type="primary" bindtap="login">登录</button>
+                <button type="info" bindtap="register">注册</button>
+            </view>
+        </view>
+    </view>
+</view>

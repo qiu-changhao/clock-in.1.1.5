@@ -1,0 +1,36 @@
+.login {
+    position: absolute;
+    width: 100%;
+    background-color: rgba(0, 153, 255, 0.99);
+    height: 55%;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.login-background {
+    background-color: white;
+    margin: 20px;
+    border-radius: 5px;
+}
+
+.login-background>view {
+    padding: 5px 10px 0;
+}
+.login-background>view>radio-group{
+    text-align: center;
+    font-size: 14px;
+}
+
+.login-background>view>input {
+    line-height: 50px;
+    border: 1px solid gray;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-size: 14px;
+}
+.login-background>view:last-child{
+    padding: 15px 10px;
+}
+.login-background>view>button{
+    margin-top: 10px;
+}

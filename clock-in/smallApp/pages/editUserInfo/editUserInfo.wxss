@@ -1,0 +1,16 @@
+/* pages/editUserInfo/editUserInfo.wxss */
+.editContainer{
+  height: 400rpx;
+  padding-top: 20rpx;
+}
+.me_clock_content>view{
+  width: calc(100vw / 3);
+}
+.title{
+  border-bottom: 1px solid #e5e5e5;
+}
+.text_center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,4 @@
+excludePathPatterns: /**/login,/**/logout,/*.*,/**/*.*,/swagger-resources,/v3/*
+token:
+  signKey: superTyc
+  expirationTime: 1800000

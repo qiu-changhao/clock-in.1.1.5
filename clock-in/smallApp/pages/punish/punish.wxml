@@ -1,0 +1,5 @@
+<view>
+  <view class="text_center">
+    <text style="color:gray;font-weight:600;font-size: 40rpx;">很好您还没有惩罚，继续保持！</text>
+  </view>
+</view>

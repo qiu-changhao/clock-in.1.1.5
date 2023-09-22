@@ -1,0 +1,23 @@
+<view class="create_wrap">
+    <view class="title p20">添加班级</view>
+    <view class="create_content map">
+        <view class="flex align-middle">
+            <text class="">班级</text>
+            <input type="text" value="{{name}}" bindblur="setName" placeholder="请输入班级名称"></input>
+        </view>
+        <view class="flex align-middle">
+            <text class="">排序</text>
+            <input type="number" value="{{sort}}" bindblur="setSort" placeholder="请输入排序"></input>
+        </view>
+    </view>
+</view>
+
+<view class="create_wrap">
+    <view class="title p20"></view>
+    <view class="create_content map">
+        <view style="padding:40rpx 0;">
+            <button type="primary" bindtap="createTeam" wx:if="{{!id}}">提交</button>
+            <button type="primary" bindtap="updateTeam" wx:else>修改</button>
+        </view>
+    </view>
+</view>

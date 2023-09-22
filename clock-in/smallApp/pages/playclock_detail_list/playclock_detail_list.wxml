@@ -1,0 +1,22 @@
+<block wx:if="{{clockInDetailList.length>0}}">
+  <view wx:for="{{clockInDetailList}}" wx:key="index" wx:for-item="item">
+    <view class="container">
+      <view class="playList flex">
+        <view class="flex flex-column space-between" style="flex:1">
+          <view class="nickName flex space-between">
+            <text class="title">用户：{{item.username}}</text>
+          </view>
+          <view class="nickName flex space-between">
+            <text wx:if="{{item.createTime}}">打卡时间：{{item.createTime}}</text>
+            <text wx:else>未打卡</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</block>
+<view wx:else>
+  <view class="text_center">
+    <text style="color:gray;font-weight:600;font-size: 40rpx;">还没有人来打卡哦！</text>
+  </view>
+</view>

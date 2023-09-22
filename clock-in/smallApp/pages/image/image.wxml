@@ -1,0 +1,2 @@
+<!--pages/image/image.wxml-->
+<image mode="widthFix" style="width:100%" src="../../assets/shuoming.png"></image>

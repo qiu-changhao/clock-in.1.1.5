@@ -1,0 +1,48 @@
+<!--pages/play/play.wxml-->
+<view class="clockInfoWrap container flex flex-column space-around" bindtap="viewMap" wx:if="{{clock_info}}">
+  <view class="clockInfo flex flex-column space-around">
+    <text>{{clock_info.title}}</text>
+    <view class="time">{{clock_info.startDate}} {{clock_info.startTime}}至{{clock_info.endDate}} {{clock_info.endTime}}</view>
+    <view>
+      <text class="ing" wx:if="{{clock_info.expired}}">进行中</text>
+      <text class="joinCount" wx:else="">已结束</text>
+    </view>
+    <view>{{clock_info.address}}</view>
+  </view>
+  <map id="map" longitude="{{clock_info.longitude}}" latitude="{{clock_info.latitude}}" markers="{{markers}}" scale="14" enable-3D show-location='true' style="width: 100%; height: 200px; margin-top:100rpx"></map>
+</view>
+<view class="clockInfoWrap container flex flex-column space-around" style="text-align: center;" wx:else>
+  没有打卡信息
+</view>
+
+<view class="container p20">
+  <view>打卡规则|<text style="color:red">地图中出现绿点才是定位成功,红图标是要求打卡位置!</text></view>
+  <view>1.打卡必须距离地址1公里之内</view>
+  <view>2.仅发起人可查看打卡记录</view>
+  <view>3.每次打卡许提供['打卡人']信息</view>
+  <view>4.如乱填写出现问题后果自负</view>
+  <view>5.需要打开手机定位功能,并允许获取位置信息(如果已经拒绝或者没同意，点击小程序右上角“···”设置里位置信息选择允许）</view>
+
+</view>
+<form bindsubmit="submitFunction">
+  <view class="playContainer playInput">
+    <button type="primary" form-type="submit" wx:if="{{clock_info.expired}}">点击打卡</button>
+    <button type="primary" form-type="submit" wx:else disabled="true">无法打卡</button>
+  </view>
+</form>
+
+
+<view class="container" wx:if="{{clock_logs.length>0}}">
+  <view class="playList flex" wx:for="{{clock_logs}}" wx:key="index">
+    <view class="flex flex-column space-between" style="flex:1">
+      <view class="nickName flex space-between">
+        <text>{{item.clockInTitle}}</text>
+        <text class="joinCount"> {{item.createTime}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="container flex flex-middle" wx:else>
+  暂无信息
+</view>

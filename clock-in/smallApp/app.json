@@ -1,0 +1,32 @@
+{
+    "pages": [
+        "pages/login/index",
+        "pages/home/home",
+        "pages/play/play",
+        "pages/clock_list/clock_list",
+        "pages/create/create",
+        "pages/editUserInfo/editUserInfo",
+        "pages/playList/playList",
+        "pages/playclock_list/playclock_list",
+        "pages/image/image",
+        "pages/punish/punish",
+        "pages/team/team",
+        "pages/teamForm/teamForm",
+        "pages/enroll/enroll",
+        "pages/playclock_detail_list/playclock_detail_list"
+    ],
+    "window": {
+        "enablePullDownRefresh": true,
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#3db0fc",
+        "navigationBarTitleText": "打卡签到",
+        "navigationBarTextStyle": "white"
+    },
+    "permission": {
+        "scope.userLocation": {
+            "desc": "你的位置信息将用于小程序部分功能"
+        }
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

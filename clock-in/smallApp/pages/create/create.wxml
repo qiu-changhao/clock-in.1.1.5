@@ -1,0 +1,68 @@
+<!--pages/create/create.wxml-->
+<view class="create_wrap">
+    <view style="text-align: center;margin-top: 20rpx;"><text style="color:red;font-weight:bold">{{gonggao}}</text></view>
+    <view class="title p20">创建每日打卡</view>
+    <view class="create_content">
+        <input class="inp_title" type="text" maxlength='15' placeholder="打卡标题(最多15个字符)" bindblur="setTitle"/>
+        <picker mode="date" value="{{startDate}}" start="{{startDate}}" bindchange="changeDate" data-type="startDate">
+            <view class="flex space-between">
+                <text>开始日期:</text>
+                <text>{{startDate}}</text>
+            </view>
+        </picker>
+        <picker mode="date" value="{{endDate}}" start="{{endDate}}"  bindchange="changeDate" data-type="endDate">
+            <view class="flex space-between">
+                <text>结束日期:</text>
+                <text>{{endDate}}</text>
+            </view>
+        </picker>
+    </view>
+</view>
+
+<view class="create_wrap">
+    <view class="title p20">时间设置</view>
+    <view class="create_content">
+        <picker mode="time" value="{{startTime}}" start="01:00" end="24:00" bindchange="changeDate" data-type="startTime">
+            <view class="flex space-between">
+                <text>开始时间:</text>
+                <text>{{startTime}}</text>
+            </view>
+        </picker>
+        <picker mode="time" value="{{endTime}}" start="01:00" end="24:00" bindchange="changeDate" data-type="endTime">
+            <view class="flex space-between">
+                <text>结束时间:</text>
+                <text>{{endTime}}</text>
+            </view>
+        </picker>
+    </view>
+</view>
+
+<view class="create_wrap">
+    <view class="title p20">地点设置</view>
+    <view class="create_content map">
+        <view class="flex align-middle" bindtap="setMap">
+            <text class="">定位</text>
+            <image src="/assets/icon_map.png"/>
+            <text>{{targetMap.name}}</text>
+        </view>
+        <view class="flex align-middle">
+            <text class="">打卡范围</text>
+            <input type="number" value="1000" bindblur="setrange" placeholder="详细地址 (选填) 单位:米"></input>
+        </view>
+    </view>
+</view>
+
+<view class="create_wrap">
+    <view class="title p20">班级设置</view>
+    <view class="create_content map">
+        <picker mode="selector" value="{{teamIndex}}" bindchange="changeTeam" range="{{teamArray}}">
+            <view class="flex space-between">
+                <text>班级:</text>
+                <text>{{teamArray[teamIndex]}}</text>
+            </view>
+        </picker>
+        <view style="padding:40rpx 0;">
+            <button type="primary" bindtap="createClockEvent">提交</button>
+        </view>
+    </view>
+</view>

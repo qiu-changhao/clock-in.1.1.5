@@ -1,0 +1,25 @@
+<!-- pages/clock_list/clock_list.wxml-->
+<block wx:if="{{clock_list.length>0}}">  
+<view class="container" wx:if="{{clock_list.length>0}}">
+  <view class="playList flex" wx:for="{{clock_list}}" wx:key="index">
+    <view class="flex flex-column space-between" style="flex:1">
+      <view class="nickName flex space-between">
+        <text class="title">{{item.title}}</text>
+        <text class="ing" wx:if="{{item.expired}}">进行中</text>
+        <text class="joinCount" wx:else="">已结束</text>
+      </view>
+      <view>{{item.className}}</view>
+      <view class="time flex space-between">
+        <text class="gray">{{item.startTime}}至{{item.endTime}}</text>
+        <text class="btnBg" data-smile='{{item.id}}' style="background:{{btnBgBackground}}" wx:if="{{btnBgBackground}}" bindtap="setSadianClock">{{btnBgValue}}</text>
+              <text class="btnBg" style="background:rgb(226, 226, 226)" wx:else bindtap="setDeleteClock">...</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+
+</block>
+<view wx:else class="text_center">
+      <text style="color:gray;font-weight:600;font-size: 40rpx;">还没有创建打卡哦！</text>
+</view>

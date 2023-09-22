@@ -1,0 +1,31 @@
+<view class="create_wrap">
+    <view class="title p20">报名班级</view>
+    <view class="create_content map">
+        <picker mode="selector" value="{{teamIndex}}" bindchange="changeTeam" range="{{teamArray}}">
+            <view class="flex space-between">
+                <text>班级:</text>
+                <text>{{teamArray[teamIndex]}}</text>
+            </view>
+        </picker>
+        <view style="padding:40rpx 0;">
+            <button type="primary" bindtap="bindingTeam">报名</button>
+        </view>
+    </view>
+</view>
+
+<block wx:if="{{bindingTeamList.length>0}}">
+    <view class="container" wx:if="{{bindingTeamList.length>0}}">
+        <view class="playList flex" wx:for="{{bindingTeamList}}" wx:key="index">
+            <view class="flex flex-column space-between" style="flex:1">
+                <view class="nickName flex space-between">
+                    <text class="title">{{item.name}}</text>
+                    <text class="btnBg" data-smile='{{item.id}}' style="background:{{btnBgBackground}}" wx:if="{{btnBgBackground}}" bindtap="setDelBindingTeam">{{btnBgValue}}</text>
+                    <text class="btnBg" style="background:rgb(226, 226, 226)" wx:else bindtap="setDeleteBinding">...</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+<view wx:else class="text_center">
+    <text style="color:gray;font-weight:600;font-size: 40rpx;">还没有报名哦！</text>
+</view>
